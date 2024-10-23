@@ -60,13 +60,15 @@ def game():
     print( "The valid colors are", COLORS)
 
     code = generate_code()
+    print(f"This is the code geenrated from the computer: {code}")
     for attempts in range(1, TRIES+1):
         guess = guess_code()
         correct_pos, incorrect_pos = check_code(guess, code)
 
         if correct_pos == CODE_LEN:
             print(f"You guessed the code in {attempts} tries!")
-        print(f"Correct position: {correct_pos} | Incorrect Position: {incorrect_pos}")
+        else:
+            print(f"Correct position: {correct_pos} | Incorrect Position: {incorrect_pos}")
     else:
         print(f"you ran out of tries, the code was: {code}")
 
